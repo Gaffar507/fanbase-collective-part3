@@ -120,10 +120,6 @@ ul{
     box-shadow: 0 5px 10px rgba(255,90,31,.25);
 }
 
-
-/* ==========
-   HEADER
-========== */
 /* =========================
    HEADER
 ========================= */
@@ -145,7 +141,7 @@ ul{
 /* Logo */
 
 .logo img{
-    width: 260px;
+    width: 250px;
     display: block;
 }
 
@@ -220,8 +216,6 @@ ul{
     transform: scaleX(1);
 }
 
-
-
 /* Mobile Menu Button */
 
 .menu-toggle{
@@ -239,7 +233,6 @@ ul{
     margin: 5px 0;
     border-radius: 50px;
 }
-
 
 
 /* ==========
@@ -479,9 +472,6 @@ ul{
     stroke-width:2.5;
 }
 
-
-
-
 /* =========================
    Pricing Section
 ========================= */
@@ -492,8 +482,8 @@ ul{
 }
 
 .pricing-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  display: flex;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -504,6 +494,7 @@ ul{
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  max-width: 240px;
   gap: 0px;
   border-radius: 14px;
   padding: 24px 22px;
@@ -675,7 +666,7 @@ ul{
   padding: 1%;
   display: flex;
   align-items: center;
-justify-content: center;
+  justify-content: center;
 }
 
 .btn-primary:hover {
@@ -1525,71 +1516,188 @@ justify-content: center;
    RESPONSIVE
 ========================= */
 
-@media (max-width: 991px){
+@media (min-width: 1200px) {
+  .container { width: var(--container); }
+}
 
-    /* Navbar */
-    .menu-toggle{
-        display: block;
-    }
-
+@media (max-width: 1199.98px){
+        /* Navbar */
     .nav-menu{
-        position: absolute;
-        top: 100%;
-        left: 0;
-        width: 100%;
-        background: var(--white);
-        flex-direction: column;
-        gap: 24px;
-        padding: 30px;
-        display: none;
-        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+        gap: 20px;
+        padding: 24px;
     }
-
-    .nav-menu.active{
-        display: flex;
-    }
-
-    .navbar .btn-primary{
-        display: none;
-    }
-
+    
     .logo img{
         width: 220px;
     }
 
-    /* hero section */
-    .hero-wrapper{
-        grid-template-columns:1fr;
-    }
+/* ==========
+   HERO
+========== */
+.hero{
+    padding:20px 0 50px;
+}
 
-    .hero h1{
-        font-size:60px;
-    }
+.hero-wrapper{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
 
-    .hero-image{
-        order:-1;
-    }
+.hero-content{
+    max-width:530px;
+}
 
-    .pricing-badge{
-        position:relative;
-        left:auto;
-        bottom:auto;
-        margin-top:-80px;
-        margin-inline:auto;
-    }
+.hero-tagline{
+    font-size:26px;
+    margin-bottom:20px;
+}
 
-    /* pricing section */
-      .pricing-grid {
-    grid-template-columns: repeat(5, 1fr);
-  }
+.hero h1{
+    font-size:58px;
+    margin-bottom:25px;
+}
 
-  .pricing-card {
-    min-height: 620px;
-  }
+.hero-accent{
+  display: flex;
+  flex-direction: row;
+}
 
-  .amount {
-    font-size: 56px;
-  }
+.hero p{
+    max-width:480px;
+    font-size:18px;
+    margin-bottom:45px;
+}
+
+.hero-features{
+    justify-content: space-between;
+    gap:20px;
+}
+
+.icon-circle{
+    width:65px;
+    height:65px;
+    margin-bottom:15px;
+}
+
+.icon-circle i{
+    font-size:25px;
+}
+
+.feature-card h4{
+    font-size:16px;
+}
+
+.hero-image{
+    height: 100%;
+}
+
+.hero-image img{
+    width:100%;
+    height: 600px;
+}
+
+.pricing-badge{
+    width:260px;
+    padding:28px 20px;
+    left:-10px;
+    bottom:-10px;
+}
+
+.badge-top{
+    gap:10px;
+    margin-bottom:12px;
+}
+
+.badge-top span{
+    font-size:14px;
+}
+
+.price-row{
+    gap:8px;
+    margin-bottom:18px;
+}
+
+.price-row h2{
+    font-size:50px;
+}
+
+.price-row small{
+    font-size:18px;
+    margin-bottom:12px;
+}
+
+.divider{
+    margin-bottom:18px;
+}
+
+.badge-features{
+    margin:0 0 22px;
+}
+
+.badge-features li{
+    gap:10px;
+    font-size:15px;
+    margin-bottom:12px;
+}
+
+.badge-features svg{
+    width:14px;
+    height:14px;
+}
+
+.badge-btn{
+    gap:10px;
+    height:40px;
+    font-size:16px;
+}
+
+.badge-btn svg{
+    width:18px;
+    height:18px;
+}
+
+/* =========================
+   Pricing Section
+========================= */
+
+.pricing-section {
+  padding: 50px 0;
+}
+
+.pricing-grid {
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pricing-card {
+  padding: 22px 18px;
+}
+
+.plan-title {
+  font-size: 36px;
+}
+
+.trophy-icon {
+    height: 16px;
+    width: 16px;
+}
+
+.plan-subtitle {
+  font-size: 15px;
+  margin-bottom: 28px;
+}
+
+.price {
+  margin-bottom: 30px;
+}
+.currency {
+  font-size: 40px;
+}
+
+.amount {
+  font-size: 40px;
+}
+
 
    /* comparison section */
     .comparison-grid {
@@ -1657,8 +1765,198 @@ justify-content: center;
     }
 }
 
+@media (max-width: 991.98px) {
 
-@media(max-width:576px){
+        /* Navbar */
+    .menu-toggle{
+        display: block;
+    }
+
+    .nav-menu{
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--white);
+        flex-direction: column;
+        gap: 24px;
+        padding: 30px;
+        display: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,.08);
+    }
+
+    .nav-menu.active{
+        display: flex;
+    }
+
+    .navbar .btn-primary{
+        display: none;
+    }
+
+    .logo img{
+        width: 200px;
+    }
+
+    
+/* ==========
+   HERO
+========== */
+.hero{
+    padding:20px 0 50px;
+}
+
+.hero-wrapper{
+    display:grid;
+    grid-template-columns:1fr;
+    gap: 60px;
+}
+
+.hero-content{
+    max-width:100%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.hero-tagline{
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:58px;
+    margin-bottom:25px;
+}
+
+.hero-image{
+    height: 100%;
+}
+
+.hero-image img{
+    width:100%;
+    height: 550px;
+}
+
+.pricing-badge{
+    width:260px;
+    padding:28px 20px;
+    left:-10px;
+    bottom:-10px;
+}
+
+.price-row h2{
+    font-size:50px;
+}
+
+/* =========================
+   Pricing Section
+========================= */
+
+.pricing-section {
+  padding: 46px 0;
+}
+
+.pricing-grid {
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.pricing-card {
+  padding: 22px 18px;
+}
+
+.plan-title {
+  font-size: 34px;
+}
+
+.price {
+  margin-bottom: 30px;
+}
+
+.currency {
+  font-size: 36px;
+}
+
+.amount {
+  font-size: 38px;
+}
+
+}
+
+@media (max-width: 767.98px) {
+    .logo img{
+        width: 180px;
+    }
+
+/* ==========
+   HERO
+========== */
+.hero{
+    padding:20px 0 45px;
+}
+
+.hero-wrapper{
+    gap: 55px;
+}
+
+.hero-tagline{
+    font-size:26px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:50px;
+    margin-bottom:25px;
+}
+
+.hero-image img{
+    height: 500px;
+}
+
+.pricing-badge{
+    width:250px;
+    padding:28px 20px;
+}
+
+.price-row h2{
+    font-size:45px;
+}
+
+/* =========================
+   Pricing Section
+========================= */
+
+.pricing-section {
+  padding: 46px 0;
+}
+
+.pricing-grid {
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.pricing-card {
+  padding: 22px 18px;
+}
+
+.plan-title {
+  font-size: 34px;
+}
+
+.price {
+  margin-bottom: 30px;
+}
+
+.currency {
+  font-size: 32px;
+}
+
+.amount {
+  font-size: 34px;
+}
+
+}
+
+@media (max-width: 479.98px) {
 
     /* navbar */
     .menu-toggle{
@@ -1687,26 +1985,14 @@ justify-content: center;
     }
 
     .logo img{
-        width: 220px;
+        width: 150px;
     }
 
-    /* hero section */
-    .hero h1{
-        font-size:48px;
-    }
 
-    .hero-features{
-        flex-direction:column;
-        gap:25px;
-    }
-
-    .pricing-badge{
-        width:100%;
-    }
 
     /* pricing section */
       .pricing-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(1, 1fr);
   }
 
     /* comparison section */
