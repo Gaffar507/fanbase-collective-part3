@@ -879,12 +879,12 @@ ul{
     filter: brightness(0.85);
 }
 
-.gradient-overlay {
+/* .gradient-overlay {
     position: absolute;
     inset: 0;
     background: gradient(linear, left bottom, left top, from(rgba(0,0,0,0.5)), to(transparent));
     background: linear-gradient(to top, var(--black), transparent);
-}
+} */
 
 /* Splitter "vs." Element */
 .vs-splitter {
@@ -1423,9 +1423,9 @@ ul{
     max-width: 440px;
 }
 
-/* ==========================================================================
-   Right Layout Area: Pricing Grid Tier and Orange Trigger Button
-   ========================================================================== */
+/* ==================
+   Right Layout Area: 
+   ================== */
 .banner-right {
     display: flex;
     flex-direction: column;
@@ -1719,7 +1719,7 @@ ul{
     }
 
     /* dashboard section */ 
-        .dashboard-container {
+        .dashboard-wrapper {
         grid-template-columns: 1fr;
         gap: 40px;
         padding: 32px;
@@ -1732,23 +1732,6 @@ ul{
     
     .dropdown-wrapper {
         justify-content: flex-start;
-    }
-
-    /* cta section */
-        .banner-container {
-        flex-direction: column;
-        align-items: flex-start;
-        padding: 36px;
-        gap: 32px;
-    }
-    
-    .banner-left {
-        width: 100%;
-    }
-    
-    .banner-right {
-        width: 100%;
-        justify-content: space-between;
     }
 }
 
@@ -1875,6 +1858,30 @@ ul{
         font-size: 30px;
     }
 
+    /* dashboard section */ 
+        .dashboard-wrapper {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        padding: 32px;
+    }
+    
+    .sidebar-column {
+        flex-direction: column-reverse;
+        gap: 24px;
+        padding: 20px;
+    }
+
+    /* cta section */
+    .banner-container {
+        flex-direction: column;
+        padding: 36px;
+        gap: 60px;
+    }
+    
+    .banner-right {
+        justify-content: space-between;
+    }
+
 }
 
 @media (max-width: 767.98px) {
@@ -1949,6 +1956,33 @@ ul{
   font-size: 34px;
 }
 
+/* dashboard section */ 
+        .dashboard-wrapper {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        padding: 30px;
+    }
+    
+    .sidebar-column {
+        flex-direction: column-reverse;
+        gap: 20px;
+        padding: 16px;
+    }
+
+            /* cta section */
+    .banner-container {
+        flex-direction: column;
+        padding: 36px;
+        gap: 60px;
+    }
+    
+    .banner-right {
+        justify-content: space-between;
+    }
+
+    .banner-right-wrapper {
+        flex-direction: column;
+    }
 }
 
 @media (max-width: 479.98px) {
