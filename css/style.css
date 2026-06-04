@@ -74,14 +74,22 @@ ul{
   transition:.3s;
 }
 
-.btn-primary{
-  background:var(--secondary);
-  color:#fff;
-    padding: 16px 28px;
-    border-radius: 12px;
-    font-size: 15px;
+
+.btn-primary {
+    background-color: var(--secondary); 
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    padding: 14px 28px;
+    font-family: inherit;
+    font-size: 14px;
     font-weight: 700;
-    transition: .3s ease;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
 .btn-primary:hover{
@@ -1331,14 +1339,172 @@ justify-content: center;
 /* ==========
    CTA BANNER
 ========== */
+.banner-wrapper {
+    width: 100%;
+    margin: 20px auto;
+}
+
+/* Master Dark Card Frame */
+.banner-container {
+    background-color: #030F26; /* Deep Midnight Navy Blue matching the screenshot */
+    border-radius: 16px;
+    padding: 36px 48px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* ==========================================================================
+   Left Layout Area: Branding, Vector Icon & Message
+   ========================================================================== */
+.banner-left {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex: 1.2;
+}
+
+/* Custom Speech Bubble Heart Container with Sparkle Lines */
+.heart-icon-box {
+    position: relative;
+    width: 68px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.inner-heart-svg {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -56%);
+}
+
+/* Static Accent lines replicating screenshot hand-drawn sparkle nodes */
+.sparkle {
+    position: absolute;
+    width: 4px;
+    height: 1px;
+    background-color: #FF4F18;
+}
+.sp-1 { top: 12px; right: 0; transform: rotate(15deg); }
+.sp-2 { top: 22px; right: -4px; transform: rotate(-10deg); }
+.sp-3 { top: 34px; right: 2px; transform: rotate(-45deg); }
+
+.text-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.banner-title {
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.banner-description {
+    color: #d3daea;
+    font-size: 14px;
+    line-height: 1.5;
+    font-weight: 500;
+    max-width: 440px;
+}
+
+/* ==========================================================================
+   Right Layout Area: Pricing Grid Tier and Orange Trigger Button
+   ========================================================================== */
+.banner-right {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    justify-content: center;
+    align-items: start;
+}
+
+.banner-right-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 54px;
+}
+/* Numerical Pricing Block Styles */
+.pricing-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.starting-badge {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    margin-bottom: 2px;
+}
+
+.badge-label-orange {
+    color: #FF9F1C; /* Vivid Orange-Yellow starting label text */
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+.price-value-row {
+    display: flex;
+    align-items: baseline;
+    color: #ffffff;
+}
+
+.currency-symbol {
+    font-size: 28px;
+    font-weight: 700;
+    margin-right: 2px;
+}
+
+.amount-digits {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.02em;
+}
+
+.per-month {
+    color: #94A3B8;
+    font-size: 13px;
+    font-weight: 600;
+    margin-left: 4px;
+}
+
+/* Call To Action Engine Block */
+.action-block {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    align-items: flex-start;
+}
 
 
+.disclaimer-text {
+    color: #97a2b0;
+    font-size: 12px;
+    font-weight: 500;
+    white-space: nowrap;
+}
 
 
 /* =========================
    RESPONSIVE
 ========================= */
-
 
 @media (max-width: 991px){
 
@@ -1453,6 +1619,23 @@ justify-content: center;
     .dropdown-wrapper {
         justify-content: flex-start;
     }
+
+    /* cta section */
+        .banner-container {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 36px;
+        gap: 32px;
+    }
+    
+    .banner-left {
+        width: 100%;
+    }
+    
+    .banner-right {
+        width: 100%;
+        justify-content: space-between;
+    }
 }
 
 
@@ -1536,5 +1719,35 @@ justify-content: center;
     .x-axis {
         font-size: 9px;
         padding-left: 40px;
+    }
+
+    /* cta section */
+    .banner-container {
+        padding: 28px 20px;
+    }
+    
+    .banner-left {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 16px;
+    }
+    
+    .banner-title {
+        font-size: 22px;
+    }
+    
+    .banner-right {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+    
+    .cta-orange-button {
+        width: 100%;
+        justify-content: center;
+    }
+    
+    .disclaimer-text {
+        white-space: normal;
     }
 }
