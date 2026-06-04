@@ -33,6 +33,9 @@ img{
   display:block;
 }
 
+h2 {
+     font-family: "Roboto Condensed", sans-serif;
+}
 a{
   text-decoration:none;
 }
@@ -993,21 +996,341 @@ justify-content: center;
 }
 
 
-
-
 /* ==========
    ANALYTICS
 ========== */
+/* Outer Section Setup */
+.dashboard-section {
+    width: 100%;
+    margin: 0 auto;
+}
+
+
+.dashboard-wrapper {
+    background-color: var(--dark-blue);
+    border-radius: 12px;
+    padding: 18px 28px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.015);
+    display: grid;
+    grid-template-columns: 3.2fr 6fr 2.8fr;
+    gap: 40px;
+    align-items: start;
+    margin-top: 25px;
+}
+
+/* ==========================================================================
+   Left Column Styling (Intro Modules)
+   ========================================================================== */
+.intro-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.section-title {
+    color: #0B1A30;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.15;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+}
+
+.subtitle-blue {
+    color: #2F6ED5;
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 24px;
+}
+
+.description-text {
+    color: #282828;
+    font-size: 14.5px;
+    line-height: 1.6;
+    margin-bottom: 16px;
+    font-weight: 500;
+}
+
+.gap-bottom {
+    margin-bottom: 32px;
+}
+
+/* Callout / Insight Box */
+.roi-callout {
+    background-color: #F0F5FF;
+    border-radius: 12px;
+    padding: 20px;
+    display: flex;
+    gap: 16px;
+    align-items: start;
+    border: 1px solid #E3ECFD;
+}
+
+.roi-icon-container {
+    background-color: #ddeafd;
+    color: #2F6ED5;
+    padding: 10px;
+    border-radius: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.roi-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.roi-text {
+    color: #1A2B49;
+    font-size: 13.5px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.roi-source {
+    color: #94A3B8;
+    font-size: 11px;
+    font-style: italic;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Middle Column Styling (KPIs and Graphical Plot)
+   ========================================================================== */
+.analytics-column {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px 10PX;
+}
+
+/* Subgrid for Key Performance Cards */
+.kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+}
+
+.kpi-card {
+    background-color: #ffffff;
+    border: 1px solid #F1F5F9;
+    border-radius: 12px;
+    padding: 18px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.01);
+}
+
+.kpi-label {
+    color: #718096;
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.kpi-value {
+    color: #0B1A30;
+    font-size: 26px;
+    font-weight: 700;
+    line-height: 1;
+    margin-bottom: 6px;
+}
+
+.kpi-trend {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 13px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.trend-up {
+    color: #018b36;
+    font-weight: bold;
+}
+
+.kpi-period {
+    display: block;
+    color: #A0AEC0;
+    font-size: 11px;
+    font-weight: 500;
+}
+
+/* Graphic Area Framework */
+.chart-card {
+    background-color: #ffffff;
+    border: 1px solid #F1F5F9;
+    border-radius: 12px;
+    padding: 24px;
+}
+
+.chart-title {
+    color: #1A2B49;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+}
+
+.chart-wrapper {
+    display: flex;
+    position: relative;
+    gap: 16px;
+}
+
+/* Y Axis Rules */
+.y-axis {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 160px;
+    color: #454545;
+    font-size: 11px;
+    font-weight: 600;
+    text-align: right;
+    width: 35px;
+    padding-bottom: 4px;
+}
+
+.chart-area {
+    flex: 1;
+    height: 160px;
+    position: relative;
+}
+
+/* Horizontal Reference Lines */
+.grid-lines {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    pointer-events: none;
+}
+
+.grid-line {
+    width: 100%;
+    height: 1px;
+    background-color: #F1F5F9;
+}
+
+/* Vector Data Mapping Overlay */
+.svg-graph {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+}
+
+/* Timeline X Axis Style */
+.x-axis {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 51px;
+    margin-top: 12px;
+    color: #4b4b4b;
+    font-size: 11px;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   Right Column Sidebar (Dropdown Filters & Checkboxes)
+   ========================================================================== */
+.sidebar-column {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 6px 20px;
+    border-radius: 12px;
+    gap: 40px;
+    background-color: #ffffff;
+}
+
+/* Clean UI Dropdown */
+.dropdown-wrapper {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.dropdown-trigger {
+    background-color: #ffffff;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 10px 16px;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    color: #4A5568;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-trigger:hover {
+    background-color: #EDF2F7;
+}
+
+/* Right checklist box setup */
+.checklist-box {
+    padding-left: 8px;
+}
+
+.checklist-title {
+    color: #0B1A30;
+    font-size: 13px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    margin-bottom: 24px;
+}
+
+.checklist-items {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.check-item {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.checkbox-active {
+    background-color: #2F6ED5;
+    color: #ffffff;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.check-text {
+    color: #2D3748;
+    font-size: 14.5px;
+    font-weight: 500;
+}
+
+
 
 /* ==========
    CTA BANNER
 ========== */
-
-/* ==========
-   FOOTER
-========== */
-
-
 
 
 
@@ -1114,6 +1437,22 @@ justify-content: center;
         grid-template-columns: 1fr;
         gap: 16px;
     }
+
+    /* dashboard section */ 
+        .dashboard-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        padding: 32px;
+    }
+    
+    .sidebar-column {
+        flex-direction: column-reverse;
+        gap: 24px;
+    }
+    
+    .dropdown-wrapper {
+        justify-content: flex-start;
+    }
 }
 
 
@@ -1177,5 +1516,25 @@ justify-content: center;
     
     .stat-icon-container {
         margin-bottom: 8px;
+    }
+
+    /* dashboard section */
+        .dashboard-container {
+        border-radius: 20px;
+        padding: 20px;
+    }
+    
+    .section-title {
+        font-size: 26px;
+    }
+    
+    .kpi-grid {
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+    
+    .x-axis {
+        font-size: 9px;
+        padding-left: 40px;
     }
 }
