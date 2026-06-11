@@ -112,6 +112,30 @@ ul {
   box-shadow: 0 5px 10px rgba(255, 90, 31, 0.25);
 }
 
+.btn-login {
+    background-color: var(--solid-blue);
+  color: var(--white);
+  border: none;
+  border-radius: 10px;
+  padding: 14px 28px;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  white-space: nowrap;
+  transition:
+    background-color 0.2s ease,
+    transform 0.1s ease;
+}
+
+.btn-login:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 10px rgba(0, 21, 255, 0.25);
+}
+
 /* =========================
    HEADER
 ========================= */
@@ -1078,6 +1102,9 @@ ul {
 .footer-newsletter {
   flex: 2;
   max-width: 300px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .footer-newsletter p {
